@@ -31,7 +31,6 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> scanQR() async {
     String barcodeScanRes;
-    // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           '#ff6666', 'Cancel', true, ScanMode.QR);
@@ -48,10 +47,8 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> scanBarcodeNormal() async {
     String barcodeScanRes;
-    // Platform messages may fail, so we use a try/catch PlatformException.
     //tryは例外処理の時に呼び出す
     //on の後に例外の処理の時の挙動を記述する
     try {
@@ -65,9 +62,6 @@ class _MyAppState extends State<MyApp> {
     }
     //barcodeScanResを_scanBarcodeに代入している
     _scanBarcode = barcodeScanRes;
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
     if (!mounted) return;
     //setStateは呼ばれたタイミングで画面を再描画する関数
     //書かない場合、取得した変数などを内部では持っているが、描画しない状態になる。
