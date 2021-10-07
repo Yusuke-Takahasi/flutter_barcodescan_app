@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert' as convert;
+import 'package:flutter_barcodescan_app/qr_page.dart';
 import 'package:flutter_barcodescan_app/sample_page.dart';
+import 'package:flutter_barcodescan_app/translate_page.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
